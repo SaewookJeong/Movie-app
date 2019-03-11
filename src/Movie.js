@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
+import ProTypes from 'prop-types';
 import './Movie.css';
 
 class Movie extends Component {
+
+    static proTypes = {
+        title: ProTypes.string.isRequired,
+        poster: ProTypes.string
+    }
+
     render(){
         return(
             <div>
-                <MoviePoster />
-                <h1>hello this is a movie</h1>
-            </div>
-            
+                <MoviePoster poster={this.props.poster} />
+                <h1>{this.props.title}</h1>
+            </div> 
         )
     }
 }
@@ -16,7 +22,7 @@ class Movie extends Component {
 class MoviePoster extends Component {
     render(){
         return(
-            <img src='https://www.much.com/wp-content/uploads/2015/11/7-Costumes.jpg'></img>
+            <img src={this.props.poster} alt="gg"></img>
         )
     }
 }
