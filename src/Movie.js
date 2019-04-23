@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ProTypes from 'prop-types';
+import proTypes from 'prop-types';
 import './Movie.css';
 
 class Movie extends Component {
 
     static proTypes = {
-        title: ProTypes.string.isRequired,
-        poster: ProTypes.string
+        title: proTypes.number,
+        poster: proTypes.string
     }
 
     render(){
@@ -22,7 +22,7 @@ class Movie extends Component {
 class MoviePoster extends Component {
     render(){
         return(
-            <img src={this.props.poster} alt="gg"></img>
+            <img src={this.props.poster} alt="poster"></img>
         )
     }
 }
